@@ -1,0 +1,70 @@
+<html>
+    <head>
+<title>Главная страница</title>
+<script>
+    var tasks = [], timer;
+    function add_task(){
+        task = prompt("Что вам нужно сделать?");
+        tasks.push(task);
+    }
+    function alert_tasks(){
+    for (i = 0; i < tasks.length; i++){
+        alert(tasks[i]);
+    }
+    }
+    function send_message(){
+        if (tasks.length == 0){
+            alert("Вы ничего не забыли?");
+        }
+        else {
+            alert('У вас осталось ' + tasks.length + ' задач!' );
+        }
+    }
+    timer = setInterval(send_message, 10000);
+    window.open('http://ya.ru'); 
+</script>
+<style>
+    body{font-family:Arial, Helvetica, sans-serif;}
+    ul {color:purple;
+    }
+    h1.blue{color:blue;}
+    h2#purple{color:blueviolet;}
+    h3, h4, h5{color:cadetblue;
+    letter-spacing: 2ch;
+    text-transform: lowercase;
+    margin-bottom: 2px;}
+    a{text-decoration: none;}
+    a:hover{color:cadetblue;}
+    .button{width: 100px;
+    background-color: cadetblue;
+    padding: 10px;
+    border-radius: 10px;
+    color:darkblue;
+    margin-bottom: 50px;}
+    .button:hover{width: 100px;
+    background-color:darkblue;
+    padding: 10px;
+    border-radius: 10px;}
+</style>
+    </head>
+    <body>
+        <h1 class="blue" align="center">Добро пожаловать!</h1>
+        <h2 id="purple" align="center">Это мой первый сайт.</h2>
+        <h3 align="center">Всем привет!</h3>
+        <a href="gallery.html" class="button">Подробнее</a>
+        <ul>
+            <li><a href="main.html">О себе</a></li>
+            <li><a href="gallery.html">Галерея</a></li>
+            <li><a href="http://maximumtest.ru">MAXIMUM</a></li>
+            <li><a href="picture.jpg">Смешной кот</a></li>
+        </ul>
+        
+        <br>
+        <form action="https://google.com/search" method="get">
+            <label>Поиск <input type="text" name="q"></label>
+            <input type="submit" value="Поиск">
+        </form>
+        <input value="Добавить задачу" onclick="add_task()" type="button"> 
+        <input value="Вывести все задачи" onclick="alert_tasks()" type="button"> 
+    </body>
+</html>

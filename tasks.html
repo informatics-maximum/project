@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+            function add_task(){
+                var tasks_list = document.getElementById('current');
+                var new_task = document.createElement('li');
+                new_task.innerHTML = prompt("Что нужно сделать?");
+                tasks_list.appendChild(new_task);  
+            }
+            function del_task(){
+                var tasks_list = document.getElementById('current');
+                var task_number = prompt('Введите номер уже сделанной задачи');
+                task_number = task_number - 1;
+                var tasks_del_list = document.getElementById('done');
+                tasks_del_list.appendChild(tasks_list.childNodes[task_number]);
+                tasks_list.removeChild(tasks_list.childNodes[task_number]); 
+                
+            }
+        </script>
+    </head>
+    <body>
+        <input value="Добавить задачу" onclick="add_task()" type="button">
+        <input value="Удалить задачу" onclick="del_task()" type="button">
+        <h1>Текущие задачи</h1>
+        <ol id="current"></ol>
+        <h1>Завершенные задачи</h1>
+        <ol id="done"></ol>
+    </body>
+</html>
