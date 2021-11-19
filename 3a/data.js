@@ -7,4 +7,4 @@ class MyModule {
     } 
 }
 
-export default MyModule;
+export default {MyModule};
